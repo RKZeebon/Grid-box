@@ -78,13 +78,13 @@ body {
 
 .a {
     grid-area: a;
-    background-color: var(--text);
+    background-color: var(--textTwo);
     animation-name: toBottom;
 }
 
 .b {
     grid-area: b;
-    background-color: var(--textTwo);
+    background-color: var(--text);
     animation-name: toTop;
 }
 
@@ -121,7 +121,7 @@ body {
 
 .i {
     grid-area: i;
-    background-color: var(--textTwo);
+    background-color: var(--accent);
     animation-name: toRight;
 }
 
@@ -139,7 +139,7 @@ body {
 
 .l {
     grid-area: l;
-    background-color: var(--secondary);
+    background-color: var(--textTwo);
     animation-name: toBottom;
 }
 
@@ -151,7 +151,7 @@ body {
 
 .n {
     grid-area: n;
-    background-color: var(--accent);
+    background-color: var(--secondary);
     animation-name: toBottomExtra;
 }
 
