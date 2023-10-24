@@ -29,6 +29,7 @@ body {
     cursor: pointer;
 }
 
+
 .container {
     display: grid;
     grid-template-columns: 50px 60px 40px 50px 50px 50px 50px 50px 20px;
@@ -36,15 +37,6 @@ body {
     gap: 5px 5px;
     grid-auto-flow: row;
     grid-template-areas:
-        /* "a a . . . b b b n"
-        ". i i i i c c c n"
-        ". i i i i c c c n"
-        "l i i i i . . . n"
-        "l i i i i . . . n"
-        "l j j h h e e e n"
-        "k j j g g d d d m"
-        "k . . f f d d d m"
-        "k . . . . . . . m"; */
         "a a . . . b b b c"
         ". d d d d e e e c"
         ". d d d d e e e c"
@@ -61,127 +53,112 @@ body {
     position: relative;
 }
 
-.a {
-    grid-area: a;
-    /* opacity: 0.8; */
-    background-color: var(--text);
-    animation: fallFromTop 4s 3.6s infinite;
-}
-
-.b {
-    grid-area: b;
-    background-color: var(--textTwo);
-    animation: fallFromTop 4s 3.4s infinite;
-}
-
-.c {
-    grid-area: c;
-    background-color: var(--background);
-    animation: fallFromTop 3s 3.2s infinite;
+.a,
+.b,
+.c,
+.e,
+.f,
+.g,
+.h,
+.i,
+.j,
+.k,
+.l,
+.m,
+.n {
+    animation: 3s infinite backwards;
 }
 
 .d {
     grid-area: d;
     background-color: var(--primary);
-    animation: fallFromTop 4s 3s infinite;
+    z-index: 99;
+    animation: leftToCenter 3s infinite backwards;
 }
+
+.a {
+    grid-area: a;
+    background-color: var(--text);
+    animation-name: toBottom;
+}
+
+.b {
+    grid-area: b;
+    background-color: var(--textTwo);
+    animation-name: toTop;
+}
+
+.c {
+    grid-area: c;
+    background-color: var(--background);
+    animation-name: toLeft;
+}
+
 
 .e {
     grid-area: e;
-    /* opacity: 0.5; */
     background-color: var(--secondary);
-    animation: fallFromTop 4s 2.8s infinite;
+    animation-name: toBottomLeft;
 }
 
 .f {
     grid-area: f;
     background-color: var(--tertiary);
-    animation: fallFromTop 4s 2.6s infinite;
+    animation-name: toRight;
 }
 
 .g {
     grid-area: g;
     background-color: var(--accent);
-    animation: fallFromTop 4s 2.4s infinite;
+    animation-name: scaled;
 }
 
 .h {
     grid-area: h;
-    /* opacity: 0.8; */
     background-color: var(--text);
-    animation: fallFromTop 4s 2.2s infinite;
+    animation-name: toTop;
 }
 
 .i {
     grid-area: i;
     background-color: var(--textTwo);
-    /* animation-name: fallFromTop;
-    animation-duration: 3s;
-    animation-iteration-count: infinite; */
-    animation: fallFromTop 4s 2s infinite;
-
+    animation-name: toRight;
 }
 
 .j {
     grid-area: j;
     background-color: var(--background);
-    animation: fallFromTop 4s 1.8s infinite;
+    animation-name: toLeft;
 }
 
 .k {
     grid-area: k;
     background-color: var(--primary);
-    animation: fallFromTop 4s 1.6s infinite;
+    animation-name: toBottomLeft;
 }
 
 .l {
     grid-area: l;
-    /* opacity: 0.8; */
     background-color: var(--secondary);
-    animation: fallFromTop 4s 1.4s infinite;
+    animation-name: toBottom;
 }
 
 .m {
     grid-area: m;
-    /* opacity: 0.8; */
     background-color: var(--tertiary);
-    animation: fallFromTop 4s 1.2s infinite;
+    animation-name: toBottomExtra;
 }
 
 .n {
     grid-area: n;
-    /* opacity: 0.5; */
     background-color: var(--accent);
-    animation: fallFromTop 4s 1s infinite;
+    animation-name: toBottomExtra;
 }
 
+/* Animation declaration */
 
+@keyframes toBottom {
 
-@keyframes fallFromTop {
-
-    /* 0% {
-        top: -1000px;
-        opacity: 0;
-    }
-
-    25% {
-        top: 0px;
-    }
-
-    35% {
-
-        top: -30px;
-    }
-
-    60% {
-        top: 0px;
-        opacity: .8;
-    }
-
-    100% {
-        top: 0px;
-        opacity: 1;
-    } */
     0% {
         top: -1000px;
         opacity: 0;
@@ -190,21 +167,15 @@ body {
 
     12% {
         top: 0px;
-        /* transform: rotate(0deg);
-        transform-origin: bottom left; */
     }
 
     18% {
-        /* transform: rotate(-15deg);
-        transform-origin: bottom left; */
         top: -30px;
     }
 
     25% {
         top: 0px;
         opacity: .8;
-        /* transform: rotate(0deg);
-        transform-origin: bottom left; */
     }
 
     30%,
@@ -215,122 +186,246 @@ body {
     }
 }
 
-/*
-@keyframes toLeft {
+@keyframes toTop {
 
-    /* 0% {
-        left: -1000px;
+    0% {
+        bottom: -1000px;
         opacity: 0;
+
     }
 
-    25% {
-        left: 0px;
+    14% {
+        bottom: 0px;
     }
 
-    35% {
-
-        left: -30px;
+    20% {
+        bottom: -30px;
     }
 
-    60% {
-        left: 0px;
+    27% {
+        bottom: 0px;
         opacity: .8;
     }
 
+    32%,
+    52%,
     100% {
-        left: 0px;
+        bottom: 0px;
         opacity: 1;
-    } */
-/*  0% {
+    }
+}
+
+@keyframes toRight {
+    0% {
         left: -1000px;
         opacity: 0;
 
     }
 
-    12% {
+    16% {
         left: 0px;
     }
 
-    18% {
+    22% {
 
         left: -30px;
     }
 
-    25% {
+    29% {
         left: 0px;
         opacity: .8;
     }
 
-    30%,
-    50%,
+    34%,
+    54%,
     100% {
         left: 0px;
         opacity: 1;
     }
 }
-*/
-/* 
-@keyframes toRight {
+
+
+@keyframes toLeft {
 
     0% {
         right: -1000px;
         opacity: 0;
+        transform: rotate(90deg);
+        transform-origin: bottom;
+
     }
 
-    25% {
+    8% {
         right: 0px;
-    }
-
-    35% {
-        right: -30px;
 
     }
 
-    60% {
+    24% {
+        transform: rotate(90deg);
+        transform-origin: bottom;
+    }
+
+    31% {
         right: 0px;
         opacity: .8;
     }
 
+    36%,
+    56%,
     100% {
         right: 0px;
         opacity: 1;
+        transform: rotate(0deg);
+        transform-origin: bottom;
+    }
+}
+
+@keyframes toBottomLeft {
+
+    0% {
+        right: -1000px;
+        top: -1000px;
+        opacity: 0;
+
     }
 
-    /* fast */
-/*0% {
-    right: -1000px;
-    opacity: 0;
-    transform: rotate(90deg);
-    transform-origin: bottom;
+    20% {
+        right: 0px;
+        top: 0px;
+    }
 
+    26% {
+
+        right: -30px;
+        top: -30px;
+    }
+
+    33% {
+        right: 0px;
+        top: 0px;
+        opacity: .8;
+    }
+
+    38%,
+    58%,
+    100% {
+        right: 0px;
+        top: 0px;
+        opacity: 1;
+
+    }
 }
 
-12% {
-    right: 0px;
-    transform: rotate(90deg);
-    transform-origin: bottom;
+
+@keyframes scaled {
+
+    0% {
+        scale: 2 2;
+        opacity: 0;
+
+    }
+
+    22% {
+        scale: .8 .8;
+    }
+
+    28% {
+
+        scale: 1.3 1.3;
+    }
+
+    35% {
+        scale: 1;
+        opacity: .8;
+    }
+
+    40%,
+    60%,
+    100% {
+        scale: 1;
+        opacity: 1;
+
+    }
 }
 
-18% {
-    right: -30px;
-    transform: rotate(90deg);
-    transform-origin: bottom;
+@keyframes toBottomExtra {
 
+    0% {
+        top: -1000px;
+        opacity: 0;
+
+    }
+
+    37% {
+        top: 50px;
+        opacity: .50;
+    }
+
+    42%,
+    62%,
+    100% {
+        top: 0px;
+        opacity: 1;
+    }
 }
 
-25% {
-    right: 0px;
-    opacity: .8;
-    transform: rotate(0deg);
-    transform-origin: bottom;
-}
+@keyframes leftToCenter {
+    /* 
+    0% {
+        left: -1000px;
+        opacity: 0;
+        scale: 1;
+    }
 
-30%,
-50%,
-100% {
-    right: 0px;
-    opacity: 1;
-}
-}
+    24% {
+        left: 0px;
+    }
 
-*/
+    30% {
+        left: 0px;
+        scale: .5;
+    }
+
+    39% {
+        left: 0px;
+        opacity: .50;
+        scale: 1;
+    }
+
+    44%,
+    64%,
+    100% {
+        top: 0px;
+        opacity: 1;
+        scale: 1;
+    } */
+
+    0%,
+    24% {
+        left: -1000px;
+        opacity: 0;
+        scale: 1;
+    }
+
+    44% {
+        left: 0px;
+    }
+
+    50% {
+        left: 0px;
+        scale: .5;
+    }
+
+    56% {
+        opacity: .50;
+        scale: 1.2;
+    }
+
+    68%,
+    84%,
+    100% {
+        top: 0px;
+        opacity: 1;
+        scale: 1;
+    }
+}
