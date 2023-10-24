@@ -255,12 +255,8 @@ body {
 
     }
 
-    8% {
+    20% {
         right: 0px;
-
-    }
-
-    24% {
         transform: rotate(90deg);
         transform-origin: bottom;
     }
